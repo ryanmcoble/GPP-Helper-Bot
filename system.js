@@ -10,11 +10,6 @@ module.exports = function(config) {
     let tokenCloseToExpire = false;
     let settings           = '';
 
-    // calculate the fitness of
-    function calculateFitness(post) {
-
-    }
-
     // process a single post
     async function processPost(post) {
         return new Promise((resolve, reject) => {
@@ -28,7 +23,7 @@ module.exports = function(config) {
             if(!settings || typeof settings[searchResults[0].id] === 'undefined') {
                 return resolve(false);
             }
-            
+
             let category = settings[searchResults[0].id];
             let redirectPost = {
                 message: category.redirectMessage
